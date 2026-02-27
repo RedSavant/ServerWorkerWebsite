@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServerWorker — Backup Discord</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="logo.png" alt="ServerWorker" class="logo-img" />
+        <span class="logo-text">Server<span class="accent">Worker</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#how">Ce qui est sauvegardé</a></li>
+        <li><a href="#backup">La commande</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="https://google.com" class="btn btn-nav" target="_blank">Ajouter le bot</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#how">Ce qui est sauvegardé</a>
+      <a href="#backup">La commande</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://google.com" class="btn btn-nav" target="_blank">Ajouter le bot</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span> Bot Discord — Sauvegarde de serveur
+      </div>
+      <h1 class="hero-title">
+        Ne perdez plus<br/>
+        votre <span class="glitch" data-text="serveur">serveur</span><br/>
+        <span class="hero-sub">jamais.</span>
+      </h1>
+      <p class="hero-desc">
+        ServerWorker sauvegarde l'intégralité de votre serveur Discord — salons, rôles, permissions, catégories — et le restaure en quelques secondes.
+      </p>
+      <div class="hero-cta">
+        <a href="https://google.com" class="btn btn-primary" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          Ajouter à Discord
+        </a>
+        <a href="#how" class="btn btn-ghost">Comment ça marche →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-mascot-wrap">
+        <div class="mascot-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+        </div>
+        <div class="mascot-glow"></div>
+        <img src="logo.png" alt="ServerWorker" class="mascot-img" />
+        <div class="mascot-badges">
+          <div class="mbadge mbadge-1">✅ Backup créé</div>
+          <div class="mbadge mbadge-2">🔄 Restauration</div>
+          <div class="mbadge mbadge-3">🛡️ Sécurisé</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE ÇA SAUVEGARDE -->
+  <section class="features" id="how">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Ce qui est sauvegardé</span>
+        <h2>Une copie complète de votre serveur.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-delay="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+          </div>
+          <h3>Salons & Catégories</h3>
+          <p>Tous vos salons textuels, vocaux et d'annonces sont sauvegardés avec leurs catégories parentes et leur ordre d'affichage.</p>
+          <div class="feature-tag">Channels</div>
+        </div>
+        <div class="feature-card" data-delay="150">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L9.568 3Z"/><path d="M6 6h.008v.008H6V6Z"/></svg>
+          </div>
+          <h3>Rôles & Permissions</h3>
+          <p>Chaque rôle, sa couleur, ses permissions et sa position dans la hiérarchie sont restaurés à l'identique.</p>
+          <div class="feature-tag">Rôles</div>
+        </div>
+        <div class="feature-card featured" data-delay="300">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+          </div>
+          <h3>Structure complète</h3>
+          <p>Permissions par salon, overwrites, topics, slowmode — chaque détail de la structure est préservé et restaurable sur n'importe quel serveur.</p>
+          <div class="feature-tag">Tout</div>
+          <div class="featured-badge">⭐ Complet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA COMMANDE /backup -->
+  <section class="commands" id="backup">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// La commande</span>
+        <h2>Une seule commande. Deux usages.</h2>
+      </div>
+      <div class="backup-layout">
+
+        <div class="backup-card" data-delay="0">
+          <div class="backup-card-header">
+            <span class="backup-emoji">💾</span>
+            <div>
+              <div class="backup-card-name">/backup create</div>
+              <div class="backup-card-tagline">Sauvegarder le serveur actuel</div>
+            </div>
+          </div>
+          <div class="backup-rows">
+            <div class="backup-row">
+              <span class="backup-label">Utilisation</span>
+              <code class="backup-code">/backup create</code>
+            </div>
+            <div class="backup-row">
+              <span class="backup-label">Permission requise</span>
+              <span class="backup-perm">ADMINISTRATOR</span>
+            </div>
+            <div class="backup-row">
+              <span class="backup-label">Résultat</span>
+              <p class="backup-output">Génère un identifiant unique de backup. Sauvegarde les salons, catégories, rôles et permissions. Conservez l'ID précieusement.</p>
+            </div>
+          </div>
+          <div class="discord-embed">
+            <div class="embed-bar"></div>
+            <div class="embed-content">
+              <div class="embed-title">✅ Backup créé avec succès</div>
+              <div class="embed-field">
+                <span class="embed-field-name">ID du backup</span>
+                <code class="embed-id">bkp_a3f9d2c1</code>
+              </div>
+              <div class="embed-field">
+                <span class="embed-field-name">Éléments sauvegardés</span>
+                <span class="embed-field-val">12 salons · 8 catégories · 15 rôles</span>
+              </div>
+              <div class="embed-footer">Gardez cet ID pour restaurer votre serveur.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="backup-card" data-delay="150">
+          <div class="backup-card-header">
+            <span class="backup-emoji">🔄</span>
+            <div>
+              <div class="backup-card-name">/backup load</div>
+              <div class="backup-card-tagline">Restaurer depuis une sauvegarde</div>
+            </div>
+          </div>
+          <div class="backup-rows">
+            <div class="backup-row">
+              <span class="backup-label">Utilisation</span>
+              <code class="backup-code">/backup load [id]</code>
+            </div>
+            <div class="backup-row">
+              <span class="backup-label">Paramètre</span>
+              <code class="backup-code accent">id — Identifiant de votre backup</code>
+            </div>
+            <div class="backup-row">
+              <span class="backup-label">Permission requise</span>
+              <span class="backup-perm">ADMINISTRATOR</span>
+            </div>
+            <div class="backup-row">
+              <span class="backup-label">Résultat</span>
+              <p class="backup-output">Recrée la structure complète : salons, catégories, rôles et permissions. Fonctionne sur n'importe quel serveur.</p>
+            </div>
+          </div>
+          <div class="discord-embed">
+            <div class="embed-bar restore"></div>
+            <div class="embed-content">
+              <div class="embed-title">🔄 Restauration en cours…</div>
+              <div class="embed-progress-wrap">
+                <div class="embed-progress-bar" id="progressBar"></div>
+              </div>
+              <div class="embed-field">
+                <span class="embed-field-name">Backup</span>
+                <code class="embed-id">bkp_a3f9d2c1</code>
+              </div>
+              <div class="embed-footer" id="progressLabel">Création des rôles…</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// FAQ</span>
+        <h2>Questions fréquentes.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Est-ce que les messages sont sauvegardés ?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Non. ServerWorker sauvegarde uniquement la <strong>structure</strong> de votre serveur : salons, catégories, rôles et permissions. Le contenu des messages n'est pas inclus.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Combien de temps est conservé mon backup ?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Vos backups sont conservés indéfiniment. Notez bien l'ID fourni lors de la création — c'est le seul moyen d'accéder à votre sauvegarde.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Puis-je restaurer sur un autre serveur ?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Oui. Ajoutez ServerWorker sur le serveur cible et utilisez <code>/backup load [id]</code> avec l'identifiant de votre backup. La structure sera recréée intégralement.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quelles permissions faut-il donner au bot ?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Le bot doit avoir les permissions <strong>Gérer les salons</strong> et <strong>Gérer les rôles</strong> pour pouvoir créer et restaurer la structure du serveur correctement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-glow"></div>
+        <img src="logo.png" alt="" class="cta-mascot" />
+        <h2>Protégez votre serveur maintenant.</h2>
+        <p>Un bot. Une commande. La tranquillité d'esprit.</p>
+        <a href="https://google.com" class="btn btn-primary btn-large" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          Ajouter ServerWorker — Gratuit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="nav-logo">
+          <img src="logo.png" alt="ServerWorker" class="logo-img" />
+          <span class="logo-text">Server<span class="accent">Worker</span></span>
+        </div>
+        <p class="footer-copy">© 2025 ServerWorker — Bot Discord de backup.</p>
+        <div class="footer-links">
+          <a href="#">Conditions</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
